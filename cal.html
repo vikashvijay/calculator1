@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    /* CSS styles for colorful calculator */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #080808;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fde2e2; /* Calculator background color */
+    border: 2px solid #f1f1f1;
+    box-shadow: 0 0 10px rgba(13, 231, 217, 0.2);
+    padding: 20px;
+    border-radius: 10px; /* Calculator border radius */
+}
+
+.output {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+input {
+    font-size: 24px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Input border color */
+    border-radius: 5px; /* Input border radius */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    font-size: 24px;
+    padding: 10px;
+    background-color: #000000; /* Button background color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Button border radius */
+}
+
+button:hover {
+    background-color: #2980b9; /* Button background color on hover */
+}
+
+.operator {
+    background-color: #e74c3c; /* Operator button background color */
+}
+
+.operator:hover {
+    background-color: #c0392b; /* Operator button background color on hover */
+}
+
+/* Add more custom styles as needed */
+
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="display" id="result">
+    <div class="buttons">
+      <button class="button" onclick="display('7')">7</button>
+      <button class="button" onclick="display('8')">8</button>
+      <button class="button" onclick="display('9')">9</button>
+      <button class="button" onclick="display('+')">+</button>
+      <button class="button" onclick="display('4')">4</button>
+      <button class="button" onclick="display('5')">5</button>
+      <button class="button" onclick="display('6')">6</button>
+      <button class="button" onclick="display('-')">-</button>
+      <button class="button" onclick="display('1')">1</button>
+      <button class="button" onclick="display('2')">2</button>
+      <button class="button" onclick="display('3')">3</button>
+      <button class="button" onclick="display('*')">*</button>
+      <button class="button" onclick="display('/')">/</button>
+      <button class="button" onclick="display('0')">0</button>
+      <button class="button" onclick="display('.')">.</button>
+      <button class="button" onclick="calculate()">=</button>
+      <button class="button" onclick="clearScreen()">Clear</button>
+    </div>
+  </div>
+
+  <script>
+    function display(value) {
+      document.getElementById("result").value += value;
+    }
+
+    function calculate() {
+      var result = eval(document.getElementById("result").value);
+      document.getElementById("result").value = result;
+    }
+
+    function clearScreen() {
+      document.getElementById("result").value = "";
+    }
+  </script>
+</body>
+</html>
